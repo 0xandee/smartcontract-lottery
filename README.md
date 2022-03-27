@@ -1,16 +1,20 @@
 # Brownie Funding Project
 
-This is a Simple Funding Project using Brownie to interact with brownie ganache / local ganache / mainnet-fork / testnet in a python enviroment. With features like send fund with entrance fee and withdraw fund.
+Features:
 
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Testnet Development](#testnet-development)
-  - [Local Development](#local-development)
-  - [Deploy to a testnet / Scripts](#deploy-to-a-testnet--scripts)
-  - [Testing on local blockchain](#testing-on-local-blockchain)
-  - [Adding additional Chains](#adding-additional-chains)
-  - [Resources](#resources)
-  - [License](#license)
+1. Users can enter lottery with ETH based on a USD fee
+2. An admin will choose when the lottery is over
+3. The lottery will select a random winner
+
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Testnet Development](#testnet-development)
+- [Local Development](#local-development)
+- [Deploy to a testnet / Scripts](#deploy-to-a-testnet--scripts)
+- [Testing on local blockchain](#testing-on-local-blockchain)
+- [Adding additional Chains](#adding-additional-chains)
+- [Resources](#resources)
+- [License](#license)
 
 ## Prerequisites
 
@@ -26,7 +30,9 @@ python3 -m pipx ensurepath
 # restart your terminal
 pipx install eth-brownie
 ```
+
 Or
+
 ```bash
 pip install eth-brownie
 ```
@@ -49,6 +55,7 @@ AND THEN RUN `source .env` TO ACTIVATE THE ENV VARIABLES
 ## Local Development
 
 For local testing [install ganache-cli](https://www.npmjs.com/package/ganache-cli)
+
 ```bash
 npm install -g ganache-cli
 ```
@@ -69,7 +76,7 @@ This will deploy mocks on development enviroment (ganache-local)
 Or deploy on Kovan/Rinkeby testnet:
 
 ```
-brownie run scripts/deploy.py --network rinkeby  
+brownie run scripts/deploy.py --network rinkeby
 ```
 
 ## Testing on local blockchain
@@ -91,7 +98,7 @@ brownie test --network rinkeby
 brownie networks add Ethereum binance-smart-chain host=https://bsc-dataseed1.binance.org chainid=56
 ```
 
-or, for a fork: 
+or, for a fork:
 
 ```
 brownie networks add development binance-fork cmd=ganache-cli host=http://127.0.0.1 fork=https://bsc-dataseed1.binance.org accounts=10 mnemonic=brownie port=8545
@@ -99,14 +106,10 @@ brownie networks add development binance-fork cmd=ganache-cli host=http://127.0.
 
 ## Resources
 
-* [Chainlink Documentation](https://docs.chain.link/docs)
-* [Brownie documentation](https://eth-brownie.readthedocs.io/en/stable/).
-* [freeCodeCamp Solidity, Blockchain, and Smart Contract Course](https://www.youtube.com/watch?v=M576WGiDBdQ&list=WL&ab_channel=freeCodeCamp.org).
+- [Chainlink Documentation](https://docs.chain.link/docs)
+- [Brownie documentation](https://eth-brownie.readthedocs.io/en/stable/).
+- [freeCodeCamp Solidity, Blockchain, and Smart Contract Course](https://www.youtube.com/watch?v=M576WGiDBdQ&list=WL&ab_channel=freeCodeCamp.org).
 
 ## License
 
 This project is licensed under the [MIT license](LICENSE).
-
-
-
-
