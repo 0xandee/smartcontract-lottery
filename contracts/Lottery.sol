@@ -20,6 +20,7 @@ contract Lottery is VRFConsumerBase, Ownable {
     LOTTERY_STATE public lottery_state;
     uint256 public fee;
     bytes32 public keyhash;
+    event RequestedRandomness(bytes32 requestId);
 
     // 0, 1, 2
 
@@ -56,7 +57,7 @@ contract Lottery is VRFConsumerBase, Ownable {
             lottery_state == LOTTERY_STATE.CLOSED,
             "Can't start a new lottery yet!"
         );
-        lottery_state == LOTTERY_STATE.OPEN;
+        lottery_state = LOTTERY_STATE.OPEN;
     }
 
     function endLottery() public onlyOwner {
@@ -66,7 +67,7 @@ contract Lottery is VRFConsumerBase, Ownable {
         );
         lottery_state = LOTTERY_STATE.CALCULATING_WINNER;
         bytes32 requestId = requestRandomness(keyhash, fee);
-
+        emit RequestedRandomness(requestId);
         pickWinner();
     }
 
