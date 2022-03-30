@@ -1,4 +1,4 @@
-# Brownie Funding Project
+# Smart Contract Lottery Repo
 
 Features:
 
